@@ -15,9 +15,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Find and Replace - elementor - Stage
       run: |
-        echo 'acb'
         pwd
-        grep -c dev.geo.ca test-file.txt 
+        grep -c dev.geo.ca test-file.txt || true
         find -not -path './.git*' -type f -exec sed -i 's/dev.geo.ca/stage.geo.ca/g' {} \;
         find -not -path './.git*' -type f -exec sed -i 's/geocore-dev.api.geo.ca/geocore-stage.api.geo.ca/g' {} \;
-        grep -c dev.geo.ca test-file.txt     
+        grep -c dev.geo.ca test-file.txt || true    
+        cat test-file.txt
