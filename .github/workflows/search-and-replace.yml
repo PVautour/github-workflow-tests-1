@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Find and Replace - elementor - Stage
+    - name: Find and Replace
       run: |
         pwd
         grep -c dev.geo.ca test-file.txt || true
